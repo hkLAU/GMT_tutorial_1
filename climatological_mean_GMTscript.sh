@@ -1,5 +1,6 @@
 #!/bin/bash
 #--------------------------------
+# script by Katie Hong Kiu Lau, March 2022. Contact email: hklau@mun.ca 
 # to run this script , type sh climatological_mean_GMTscript.sh in terminal 
 #--------------------------------
 #setup: this can be change according to your need
