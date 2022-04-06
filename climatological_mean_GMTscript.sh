@@ -41,18 +41,18 @@ projpres=-JQ30
 # mapping 
 
 #! first line no -O and > is single 
-psbasemap -R$bounds $projpres -B0 -K -P > $output   # make basemap 
+gmt psbasemap -R$bounds $projpres -B0 -K -P > $output   # make basemap 
 
-grdimage $input -E$imageres -nl -R -J -C$cpt -O -K -P >> $output  # plot netcdf 
+gmt grdimage $input -E$imageres -nl -R -J -C$cpt -O -K -P >> $output  # plot netcdf 
 
-psxy $coast -R -J -W0.5p,black -O -P -K >> $output # plot vector
+gmt psxy $coast -R -J -W0.5p,black -O -P -K >> $output # plot vector
 
-psbasemap -R -J -B0 -O -P -K >> $output 
+gmt psbasemap -R -J -B0 -O -P -K >> $output 
 
 #! last line no -K 
-psscale -C$cpt -D6/-1.5+w18/0.3+h+ef1 -L -S -B+l"Title & unit" -O -P >> $output  # plot scale bar
+gmt psscale -C$cpt -D6/-1.5+w18/0.3+h+ef1 -L -S -B+l"Title & unit" -O -P >> $output  # plot scale bar
 
 
 echo generating pdf
 
-psconvert -A -Tf -Z $output
+gmt psconvert -A -Tf -Z $output
